@@ -9,27 +9,26 @@
     <hallgato>
         <hnev>Ilyó-Kovács Levente</hnev>
         <szulev>2003.01.13</szulev>
-        <szak evf="2022">Mérnökinformatika</szak>
+        <szak evf="2022">Mérnökinformatikus</szak>
     </hallgato>
     <kurzusok>
-        <kurzus id="NLFUA8">
-            <kurzusnev id="k1" jovahagyas="igen" nyelv="magyar">Webes adatkezelő környezetek</kurzusnev>
+        <kurzus id="NLFUA8" jovahagyas="igen" nyelv="magyar">
+            <kurzusnev>Webes adatkezelő környezetek</kurzusnev>
             <kredit>5</kredit>
             <hely>
                 Inf/103
-                
             </hely>
-            <oraado>Dr Bednarik László</oraado>
             <idopont>Kedd 12:00 - 14:00</idopont>
-            <oktato id="okt1" jovahagyas="igen" nyelv="magyar"></oktato>
+            <oraado>Dr Bednarik László</oraado>
+            <oktato>Dr Bednarik László</oktato>
         </kurzus>
-        <kurzus id="NLFUA8">
-            <kurzusnev id="k1" jovahagyas="igen" nyelv="magyar">Webes adatkezelő környezetek</kurzusnev>
+        <kurzus id="NLFUA8" jovahagyas="igen" nyelv="magyar">
+            <kurzusnev>Webes adatkezelő környezetek</kurzusnev>
             <kredit>5</kredit>
             <hely>Inf/103</hely>
-            <oraado>Dr Bednarik László</oraado>
             <idopont>Kedd 12:00 - 14:00</idopont>
-            <oktato id="okt1" jovahagyas="igen" nyelv="magyar"></oktato>
+            <oktato>Dr Bednarik László</oktato>
+            <oraado>Dr Bednarik László</oraado>
         </kurzus>
     </kurzusok>
 </NLFUA8_kurzusfelvetel>
