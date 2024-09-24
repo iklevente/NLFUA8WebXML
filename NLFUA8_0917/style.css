@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+table, td{
+    border: 1px solid black;
+}
+
+.header{
+    font-weight: bold;
+    background-color: aqua;
+    padding: 5px;
+    margin: 15px;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: brown;
+}
+
+tr{
+    background-color: azure;
+    text-align: center;
+}
+
+.subject{
+    font-weight: bold;
+}
+
