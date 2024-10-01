@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE NLFUA8_kurzusfelvetel [
+    <!ELEMENT NLFUA8_kurzusfelvetel (hallgato, kurzusok)>
+    <!ELEMENT hallgato (hnev, szulev, szak)>
+]>
+
+<NLFUA8_kurzusfelvetel tanev="2024/25" egyetem="Miskolci Egyetem">
+    <hallgato>
+        <hnev>Ilyó-Kovács Levente</hnev>
+        <szulev>2003.01.13</szulev>
+        <szak evf="2022">Mérnökinformatikus</szak>
+    </hallgato>
+    <kurzusok>
+        <kurzus id="NLFUA8" jovahagyas="igen" nyelv="magyar">
+            <kurzusnev>Webes adatkezelő környezetek</kurzusnev>
+            <kredit>5</kredit>
+            <hely>
+                Inf/103
+            </hely>
+            <idopont>Kedd 12:00 - 14:00</idopont>
+            <oraado>Dr Bednarik László</oraado>
+            <oktato>Dr Bednarik László</oktato>
+        </kurzus>
+        <kurzus id="NLFUA8" jovahagyas="igen" nyelv="magyar">
+            <kurzusnev>Webes adatkezelő környezetek</kurzusnev>
+            <kredit>5</kredit>
+            <hely>Inf/103</hely>
+            <idopont>Kedd 12:00 - 14:00</idopont>
+            <oktato>Dr Bednarik László</oktato>
+            <oraado>Dr Bednarik László</oraado>
+        </kurzus>
+    </kurzusok>
+</NLFUA8_kurzusfelvetel>
