@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="idTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="O[0-9]+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="napTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Hétfő"></xs:enumeration>
+            <xs:enumeration value="Kedd"></xs:enumeration>
+            <xs:enumeration value="Szerda"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="oraTipus">
+        <xs:restriction base="xs:string">   
+            <xs:enumeration value="elmelet"></xs:enumeration>
+            <xs:enumeration value="gyakorlat"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="ora">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="targy" type="xs:string"></xs:element>
+                <xs:element name="idopont">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nap" type="napTipus"></xs:element>
+                            <xs:element name="tol" type="xs:string"></xs:element>
+                            <xs:element name="ig" type="xs:string"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="helyszin"></xs:element>
+                <xs:element name="oktato"></xs:element>
+                <xs:element name="szak"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="idTipus" use="required"></xs:attribute>
+            <xs:attribute name="tipus" type="oraTipus"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="IKL_orarend_tipus">
+        <xs:sequence>
+            <xs:element ref="ora" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="IKL_orarend" type="IKL_orarend_tipus"></xs:element>
+</xs:schema>

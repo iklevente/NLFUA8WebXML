@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<IKL_orarend>
+
+    <ora id="O0" tipus="elmelet">
+        <targy>Elektrotechnika és elektronika</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>8:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>A2/III. Előadó</helyszin>
+        <oktato>Szabó Nórbert</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O1" tipus="elmelet">
+        <targy>Webtechnológia I</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>10:00</tol>
+            <ig>12:00</ig>
+        </idopont>
+        <helyszin>A2/I. Előadó</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O3" tipus="gyakorlat">
+        <targy>Angol szaknyelv</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>12:00</tol>
+            <ig>14:00</ig>
+        </idopont>
+        <helyszin>A2/223</helyszin>
+        <oktato>Dorkó Dóra</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O4" tipus="gyakorlat">
+        <targy>Webtechnológia I</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>14:00</tol>
+            <ig>16:00</ig>
+        </idopont>
+        <helyszin>Inf/101</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O5" tipus="elmelet">
+        <targy>Mobilprogramozás alapjai</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>16:00</tol>
+            <ig>18:00</ig>
+        </idopont>
+        <helyszin>Inf/101</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O6" tipus="gyakorlat">
+        <targy>Mobilprogramozás alapjai</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>18:00</tol>
+            <ig>20:00</ig>
+        </idopont>
+        <helyszin>Inf/101</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O7" tipus="elmelet">
+        <targy>Windows rendszergazda</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>8:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>Inf/103</helyszin>
+        <oktato>Wagner György</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O8" tipus="gyakorlat">
+        <targy>Webes adatkezelő környezetek</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>12:00</tol>
+            <ig>14:00</ig>
+        </idopont>
+        <helyszin>Inf/101</helyszin>
+        <oktato>Dr Bednarik László</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+     <ora id="O9" tipus="gyakorlat">
+        <targy>Elektrotechnika és elektronika</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>8:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>A1/310</helyszin>
+        <oktato>Szabó Norbert</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O10" tipus="gyakorlat">
+        <targy>Mesterséges intelinegcia</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>10:00</tol>
+            <ig>12:00</ig>
+        </idopont>
+        <helyszin>A1/218</helyszin>
+        <oktato>Fazekas Levente</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O11" tipus="gyakorlat">
+        <targy>Windows rendszergazda</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>12:00</tol>
+            <ig>14:00</ig>
+        </idopont>
+        <helyszin>Inf/101</helyszin>
+        <oktato>Wagner György</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+    <ora id="O12" tipus="elmelet">
+        <targy>Webes adatkezelő környezetek</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>14:00</tol>
+            <ig>16:00</ig>
+        </idopont>
+        <helyszin>Inf/102</helyszin>
+        <oktato>Dr Kovács László</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+     <ora id="O13" tipus="elmelet">
+        <targy>Mesterséges intelinegcia</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>16:00</tol>
+            <ig>18:00</ig>
+        </idopont>
+        <helyszin>A1/XXXII előadó</helyszin>
+        <oktato>Kunné Dr. Tamás Judit</oktato>
+        <szak>Mérnökinformatika BSc</szak>
+    </ora>
+</IKL_orarend>

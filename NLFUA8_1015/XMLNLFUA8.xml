@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XMLSchemaNLFUA8.xsd">
+    <Etterem Ekod="E1">
+        <Csillag>4</Csillag>
+        <Cim>
+            <Varos></Varos>
+            <Utca></Utca>
+            <Hazszam></Hazszam>
+        </Cim>
+        <Nev></Nev>
+        <Foszakacs Fkod="F1">
+            <Nev></Nev>
+            <Vegzettseg></Vegzettseg>
+            <Eletkor>14</Eletkor>
+        </Foszakacs>
+        <Szakacs Szkod="Sz1">
+            <Nev></Nev>
+            <Vegzettseg></Vegzettseg>
+            <Reszleg></Reszleg>
+        </Szakacs>
+        <Gyakornok Gykod="Gy1">
+            <Nev></Nev>
+            <Gyakorlat>
+                <Kezdet></Kezdet>
+                <Idotartam></Idotartam>
+            </Gyakorlat>
+            <Muszak></Muszak>
+        </Gyakornok>
+        <Vendeg Vkod="V1">
+            <Nev></Nev>
+            <Eletkor>15</Eletkor>
+            <Cim>
+                <Varos></Varos>
+                <Utca></Utca>
+                <Hazszam></Hazszam>
+            </Cim>
+        </Vendeg>
+        <Rendeles Rkod="R1" EVRkod="EVR1">
+            <Osszeg>5</Osszeg>
+            <Etel></Etel>
+        </Rendeles>
+    </Etterem>
+</Vendeglatas>
