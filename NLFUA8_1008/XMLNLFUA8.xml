@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NLFUA8_vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <etterem ekod="e1">
+        <nev>Trófea</nev>
+        <cim>
+            <varos>Budapest</varos>
+            <utca>Visegrádi</utca>
+            <hazszam>13</hazszam>
+        </cim>
+        <csillag>4</csillag>
+    </etterem>
+
+    <etterem ekod="e2">
+        <nev>Gundel</nev>
+        <cim>
+            <varos>Budapest</varos>
+            <utca>Gundel Károly</utca>
+            <hazszam>4</hazszam>
+        </cim>
+        <csillag>5</csillag>
+    </etterem>
+
+    <foszakacs fkod="f2" e_f="e1">
+        <nev>Havas Péter</nev>
+        <eletkor>35</eletkor>
+        <vegzettseg>Szakközépiskola</vegzettseg>
+        <vegzettseg>Insitut Paul Bocuse</vegzettseg>
+    </foszakacs>
+
+    <foszakacs fkod="f2" e_f="e2">
+        <nev>Nagy Károly</nev>
+        <eletkor>30</eletkor>
+        <vegzettseg>Le Cordon Bleu</vegzettseg>
+    </foszakacs>
+
+    <rendeles e_v_e="e1" e_v_v="v2">
+        <osszeg>9000</osszeg>
+        <etel>Steak</etel>
+    </rendeles>
+
+    <rendeles e_v_e="e2" e_v_v="v2">
+        <osszeg>9000</osszeg>
+        <etel>Steak</etel>
+    </rendeles>
+</NLFUA8_vendeglatas>
