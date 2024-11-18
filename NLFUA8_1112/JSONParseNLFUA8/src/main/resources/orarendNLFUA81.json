@@ -1,0 +1,95 @@
+{
+  "IKL_orarend": [
+    {
+      "targy": "Elektrotechnika és elektronika",
+      "oktato": "Szabó Nórbert",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "8:00", "nap": "Hétfő", "ig": "10:00" },
+      "helyszin": "A2/III. Előadó"
+    },
+    {
+      "targy": "Webtechnológia I",
+      "oktato": "Agárdi Anita",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "10:00", "nap": "Hétfő", "ig": "12:00" },
+      "helyszin": "A2/I. Előadó"
+    },
+    {
+      "targy": "Angol szaknyelv",
+      "oktato": "Dorkó Dóra",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "12:00", "nap": "Hétfő", "ig": "14:00" },
+      "helyszin": "A2/223"
+    },
+    {
+      "targy": "Webtechnológia I",
+      "oktato": "Agárdi Anita",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "14:00", "nap": "Hétfő", "ig": "16:00" },
+      "helyszin": "Inf/101"
+    },
+    {
+      "targy": "Mobilprogramozás alapjai",
+      "oktato": "Agárdi Anita",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "16:00", "nap": "Hétfő", "ig": "18:00" },
+      "helyszin": "Inf/101"
+    },
+    {
+      "targy": "Mobilprogramozás alapjai",
+      "oktato": "Agárdi Anita",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "18:00", "nap": "Hétfő", "ig": "20:00" },
+      "helyszin": "Inf/101"
+    },
+    {
+      "targy": "Windows rendszergazda",
+      "oktato": "Wagner György",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "8:00", "nap": "Kedd", "ig": "10:00" },
+      "helyszin": "Inf/103"
+    },
+    {
+      "targy": "Webes adatkezelő környezetek",
+      "oktato": "Dr Bednarik László",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "12:00", "nap": "Kedd", "ig": "14:00" },
+      "helyszin": "Inf/101"
+    },
+    {
+      "targy": "Elektrotechnika és elektronika",
+      "oktato": "Szabó Norbert",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "8:00", "nap": "Szerda", "ig": "10:00" },
+      "helyszin": "A1/310"
+    },
+    {
+      "targy": "Mesterséges intelinegcia",
+      "oktato": "Fazekas Levente",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "10:00", "nap": "Szerda", "ig": "12:00" },
+      "helyszin": "A1/218"
+    },
+    {
+      "targy": "Windows rendszergazda",
+      "oktato": "Wagner György",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "12:00", "nap": "Szerda", "ig": "14:00" },
+      "helyszin": "Inf/101"
+    },
+    {
+      "targy": "Webes adatkezelő környezetek",
+      "oktato": "Dr Kovács László",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "14:00", "nap": "Szerda", "ig": "16:00" },
+      "helyszin": "Inf/102"
+    },
+    {
+      "targy": "Mesterséges intelinegcia",
+      "oktato": "Kunné Dr. Tamás Judit",
+      "szak": "Mérnökinformatika BSc",
+      "idopont": { "tol": "16:00", "nap": "Szerda", "ig": "18:00" },
+      "helyszin": "A1/XXXII előadó"
+    }
+  ]
+}
