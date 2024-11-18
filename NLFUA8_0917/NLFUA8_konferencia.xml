@@ -5,14 +5,14 @@
         <hallgatok>
             <hallgato hid="0">
                 <nev>Ilyó-Kovács Levente</nev>
-                <lakcim>Miskolc Szeles utca</lakcim>
+                <lakcim>Miskolc Tapoly utca</lakcim>
             </hallgato>
         </hallgatok>
-        <helyszin>Miskolc Egyetem III. előadó</helyszin>
+        <helyszin>Miskolc Egyetem</helyszin>
         <eloado eid="0">
-            <nev>Dr Kovács László</nev>
-            <adoszam>232131244</adoszam>
-            <lakcim>Miskolc petőfi utca 11</lakcim>
+            <nev>Dr Elő Adó</nev>
+            <adoszam>1212121212</adoszam>
+            <lakcim>Miskolc Arany János tér 1</lakcim>
         </eloado>
         <datum>2024-09-17</datum>
     </konferencia>

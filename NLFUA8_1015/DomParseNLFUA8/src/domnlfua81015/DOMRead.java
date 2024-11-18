@@ -9,50 +9,54 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
-
 public class DOMRead {
 
-    public static void main(String[] args) throws Exception {
-       File xmlFile = new File("src/resources/NLFUA8_orarend.xml");
+    public static void main(String[] args) {
+        try {
+            File xmlFile = new File("src/resources/NLFUA8_orarend.xml");
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document document = builder.parse(xmlFile);
 
-       DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-       Document doc = builder.parse(xmlFile);
+            document.getDocumentElement().normalize();
+            System.out.println("Root element: " + document.getDocumentElement().getNodeName());
 
-       doc.getDocumentElement().normalize();
+            NodeList oraNodes = document.getDocumentElement().getElementsByTagName("ora");
 
-       System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
+            for (int i = 0; i < oraNodes.getLength(); i++) {
+                Node currentNode = oraNodes.item(i);
+                System.out.println("\nCurrent element: " + currentNode.getNodeName());
 
-       NodeList nodeList = doc.getDocumentElement().getElementsByTagName("ora");
+                if (currentNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element oraElement = (Element) currentNode;
 
-       for (int i = 0; i < nodeList.getLength(); i++){
-           Node node = nodeList.item(i);
-           System.out.println("\nCurrent element: " + node.getNodeName());
+                    String id = oraElement.getAttribute("id");
+                    String tipus = oraElement.getAttribute("tipus");
 
-           if(node.getNodeType() == Node.ELEMENT_NODE) {
-               Element element = (Element) node;
+                    String targy = extractText(oraElement, "targy");
+                    String idopont = extractText(oraElement, "idopont");
+                    String helyszin = extractText(oraElement, "helyszin");
+                    String oktato = extractText(oraElement, "oktato");
+                    String szak = extractText(oraElement, "szak");
 
-               String id = element.getAttribute("id");
-               String tipus = element.getAttribute("tipus");
+                    System.out.println("ID: " + id);
+                    System.out.println("Típus: " + tipus);
+                    System.out.println("Tárgy: " + targy);
+                    System.out.println("Időpont: " + idopont);
+                    System.out.println("Helyszín: " + helyszin);
+                    System.out.println("Oktató: " + oktato);
+                    System.out.println("Szak: " + szak);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-               Node targyNode = element.getElementsByTagName("targy").item(0);
-               String targy = targyNode.getTextContent();
-               Node idopontNode = element.getElementsByTagName("idopont").item(0);
-               String idopont = idopontNode.getTextContent();
-               Node helyszinNode = element.getElementsByTagName("helyszin").item(0);
-               String helyszin = helyszinNode.getTextContent();
-               Node oktatoNode = element.getElementsByTagName("oktato").item(0);
-               String oktato = oktatoNode.getTextContent();
-               Node szakNode = element.getElementsByTagName("szak").item(0);
-               String szak = szakNode.getTextContent();
-
-               System.out.println("ID: " + id);
-               System.out.println("Tipus: " + tipus);
-               System.out.println("Tárgy: " + targy);
-               System.out.println("Idopont: " + idopont);
-               System.out.println("Helyszin: " + helyszin);
-               System.out.println("Oktato: " + oktato);
-               System.out.println("Szak: " + szak);
-           }
-       }
+    private static String extractText(Element element, String tagName) {
+        NodeList nodeList = element.getElementsByTagName(tagName);
+        if (nodeList.getLength() > 0 && nodeList.item(0).getNodeType() == Node.ELEMENT_NODE) {
+            return nodeList.item(0).getTextContent();
+        }
+        return "";
     }
 }

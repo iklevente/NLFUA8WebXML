@@ -2,7 +2,6 @@
     
 <IKL_orarend xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="NLFUA8_orarend1.xsd">
-
     <ora id="O0" tipus="elmelet">
         <targy>Elektrotechnika és elektronika</targy>
         <idopont>

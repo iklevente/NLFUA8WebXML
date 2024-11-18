@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- <!DOCTYPE mozi SYSTEM "Y4O4X0_mozi.dtd">  -->
-
-
 <!DOCTYPE mozi [
     <!ELEMENT mozi (film*)>
     <!ELEMENT film (rendezo+, szinesz+, iro+)>
