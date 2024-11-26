@@ -1,0 +1,20 @@
+<orarend>
+    <targy id="1">
+        <nev>Adatkezelés XML-ben (BL)</nev>
+        <helyszin>Inf/101</helyszin>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>PTI-MI</szak>
+    </targy>
+    <targy id="2">
+        <nev>Algoritmusok</nev>
+        <helyszin>Inf/102</helyszin>
+        <oktato>Dr. Nagy Katalin</oktato>
+        <szak>PTI</szak>
+    </targy>
+    <targy id="3">
+        <nev>Adatbázis-kezelés</nev>
+        <helyszin>XXXVII</helyszin>
+        <oktato>Dr. Tóth András</oktato>
+        <szak>MI</szak>
+    </targy>
+</orarend>

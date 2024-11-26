@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "orarend": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "targy": { "type": "string" },
+          "helyszin": { "type": "string" },
+          "oktato": { "type": "string" },
+          "szak": { "type": "string" }
+        },
+        "required": ["targy", "helyszin", "oktato", "szak"]
+      }
+    }
+  },
+  "required": ["orarend"]
+}

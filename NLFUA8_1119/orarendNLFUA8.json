@@ -1,0 +1,16 @@
+{
+  "orarend": [
+    {
+      "targy": "Adatkezelés XML-ben",
+      "helyszin": "Inf/101",
+      "oktato": "Dr. Bednarik László",
+      "szak": "MI"
+    },
+    {
+      "targy": "Algoritmusok",
+      "helyszin": "Inf/102",
+      "oktato": "Dr. Nagy Katalin",
+      "szak": "PTI"
+    }
+  ]
+}

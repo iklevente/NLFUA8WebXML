@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Lekérdezés</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const jsonData = {
+                "orarend": [
+                    {
+                        "targy": "Adatkezelés XML-ben",
+                        "helyszin": "Inf/101",
+                        "oktato": "Dr. Bednarik László",
+                        "szak": "MI"
+                    },
+                    {
+                        "targy": "Algoritmusok",
+                        "helyszin": "Inf/102",
+                        "oktato": "Dr. Nagy Katalin",
+                        "szak": "PTI"
+                    }
+                ]
+            };
+
+            const output = document.getElementById("output");
+            jsonData.orarend.forEach((item) => {
+                for (const [key, value] of Object.entries(item)) {
+                    const p = document.createElement("p");
+                    p.textContent = `${key}: ${value}`;
+                    output.appendChild(p);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Órarend</h1>
+    <div id="output"></div>
+</body>
+</html>

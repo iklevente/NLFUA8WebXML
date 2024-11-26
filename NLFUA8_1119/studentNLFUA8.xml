@@ -1,0 +1,20 @@
+<class>
+    <student id="1">
+        <keresztnev>Levente</keresztnev>
+        <vezeteknev>Ilyó-Kovács</vezeteknev>
+        <becenev>Levi</becenev>
+        <kor>21</kor>
+    </student>
+    <student id="2">
+        <keresztnev>Anna</keresztnev>
+        <vezeteknev>Kovács</vezeteknev>
+        <becenev>Ancsa</becenev>
+        <kor>21</kor>
+    </student>
+    <student id="3">
+        <keresztnev>László</keresztnev>
+        <vezeteknev>Tóth</vezeteknev>
+        <becenev>Laci</becenev>
+        <kor>23</kor>
+    </student>
+</class>
