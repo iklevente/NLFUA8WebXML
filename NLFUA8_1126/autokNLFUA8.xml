@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylsheet type="text/xsl" href="autok.xsl"?>
+<autok>
+    <auto rsz="XYZ-123">
+        <tipus> Toyota Corolla </tipus>
+        <ar> 1500000 </ar>
+        <szin> piros </szin>
+        <tulaj>
+            <nev>Géza</nev>
+            <varos>Budapest</varos>
+        </tulaj>
+    </auto>
+
+    <auto rsz="ABC-456">
+        <tipus> BMW 320d </tipus>
+        <ar> 3000000 </ar>
+        <szin> kék </szin>
+        <tulaj>
+            <nev>Mari</nev>
+            <varos>Debrecen</varos>
+        </tulaj>
+    </auto>
+
+    <auto rsz="DEF-789">
+        <tipus> Mercedes-Benz E Class </tipus>
+        <ar> 12000000 </ar>
+        <szin> fekete </szin>
+        <tulaj>
+            <nev>Norbi</nev>
+            <varos>Győr</varos>
+        </tulaj>
+    </auto>
+    
+    <auto rsz="GHI-101">
+        <tipus> Ford Fiesta </tipus>
+        <ar> 900000 </ar>
+        <szin> fehér </szin>
+        <tulaj>
+            <nev>Bence</nev>
+            <varos>Pécs</varos>
+        </tulaj>
+    </auto>
+
+</autok>
