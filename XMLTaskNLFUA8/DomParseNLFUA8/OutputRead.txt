@@ -1,0 +1,18 @@
+Jármű ID: 1
+Rendszám: ABC-123
+Típus: Személyautó
+Márka: Volkswagen
+Kilométer: 120000
+
+Jármű ID: 2
+Rendszám: XYZ-456
+Típus: Teherautó
+Márka: Mercedes
+Kilométer: 90000
+
+Jármű ID: 3
+Rendszám: DEF-789
+Típus: Kisbusz
+Márka: Ford
+Kilométer: 45000
+

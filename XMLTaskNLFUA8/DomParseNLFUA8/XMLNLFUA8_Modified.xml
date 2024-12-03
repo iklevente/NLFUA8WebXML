@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><AutoRendszer>
+    <Gepjarmu JarmuID="1">
+        <Rendszam>ZZZ-999</Rendszam>
+        <JarmuTipus>Személyautó</JarmuTipus>
+        <GyartasiHely>Győr</GyartasiHely>
+        <Marka>Volkswagen</Marka>
+        <Evjarat>2015</Evjarat>
+        <MegtettKilometer>120000</MegtettKilometer>
+    </Gepjarmu>
+    <Gepjarmu JarmuID="2">
+        <Rendszam>XYZ-456</Rendszam>
+        <JarmuTipus>Teherautó</JarmuTipus>
+        <GyartasiHely>Győr</GyartasiHely>
+        <Marka>Mercedes</Marka>
+        <Evjarat>2018</Evjarat>
+        <MegtettKilometer>95000</MegtettKilometer>
+    </Gepjarmu>
+    <Gepjarmu JarmuID="3">
+        <Rendszam>DEF-789</Rendszam>
+        <JarmuTipus>Kisbusz</JarmuTipus>
+        <GyartasiHely>Szeged</GyartasiHely>
+        <Marka>Ford</Marka>
+        <Evjarat>2020</Evjarat>
+        <MegtettKilometer>45000</MegtettKilometer>
+    </Gepjarmu>
+
+    <Karbantartas JarmuID="1" SzereloID="10">
+        <KarbantartasiSzint>Közepes</KarbantartasiSzint>
+        <MegtettKilometer>100000</MegtettKilometer>
+    </Karbantartas>
+    <Karbantartas JarmuID="2" SzereloID="11">
+        <KarbantartasiSzint>Magas</KarbantartasiSzint>
+        <MegtettKilometer>80000</MegtettKilometer>
+    </Karbantartas>
+    <Karbantartas JarmuID="3" SzereloID="12">
+        <KarbantartasiSzint>Alacsony</KarbantartasiSzint>
+        <MegtettKilometer>40000</MegtettKilometer>
+    </Karbantartas>
+
+    <Szerelo SzereloID="10">
+        <Nev>Kovács István</Nev>
+        <SSN>123456789</SSN>
+        <Lakcim>Budapest, Fő utca 1.</Lakcim>
+        <Telefonszam>+36123456789</Telefonszam>
+        <Mentorok>
+            <Mentor>20</Mentor>
+            <Mentoralt>11</Mentoralt>
+        </Mentorok>
+    </Szerelo>
+    <Szerelo SzereloID="11">
+        <Nev>Szabó Péter</Nev>
+        <SSN>987654321</SSN>
+        <Lakcim>Győr, Arany János utca 10.</Lakcim>
+        <Telefonszam>+36981234567</Telefonszam>
+    </Szerelo>
+    <Szerelo SzereloID="12">
+        <Nev>Nagy János</Nev>
+        <SSN>456789123</SSN>
+        <Lakcim>Szeged, Kossuth Lajos tér 5.</Lakcim>
+        <Telefonszam>+36201234567</Telefonszam>
+    </Szerelo>
+
+    <Kolcsonzes JarmuID="1" KolcsonzesID="100" KolcsonzoCegID="300" VasarloID="200">
+        <KolcsonzesAra>15000</KolcsonzesAra>
+        <KolcsonzesIdopontja>2024-01-01</KolcsonzesIdopontja>
+        <ElteltNapok>5</ElteltNapok>
+    </Kolcsonzes>
+    <Kolcsonzes JarmuID="2" KolcsonzesID="101" KolcsonzoCegID="301" VasarloID="201">
+        <KolcsonzesAra>20000</KolcsonzesAra>
+        <KolcsonzesIdopontja>2024-02-15</KolcsonzesIdopontja>
+        <ElteltNapok>3</ElteltNapok>
+    </Kolcsonzes>
+    <Kolcsonzes JarmuID="3" KolcsonzesID="102" KolcsonzoCegID="302" VasarloID="202">
+        <KolcsonzesAra>18000</KolcsonzesAra>
+        <KolcsonzesIdopontja>2024-03-10</KolcsonzesIdopontja>
+        <ElteltNapok>7</ElteltNapok>
+    </Kolcsonzes>
+
+    <Vasarlo VasarloID="200">
+        <Nev>Tóth Anna</Nev>
+        <Lakcim>Debrecen, Petőfi utca 10.</Lakcim>
+        <Telefonszam>+36201234567</Telefonszam>
+    </Vasarlo>
+    <Vasarlo VasarloID="201">
+        <Nev>Varga Béla</Nev>
+        <Lakcim>Pécs, Széchenyi tér 12.</Lakcim>
+        <Telefonszam>+36701234567</Telefonszam>
+    </Vasarlo>
+    <Vasarlo VasarloID="202">
+        <Nev>Kiss Éva</Nev>
+        <Lakcim>Miskolc, Ady Endre utca 20.</Lakcim>
+        <Telefonszam>+36401234567</Telefonszam>
+    </Vasarlo>
+
+    <KolcsonzoCeg CegID="300">
+        <Nev>AutóRent Kft.</Nev>
+        <AutokSzama>50</AutokSzama>
+        <Alapterulet>500m2</Alapterulet>
+        <Cim>Pécs, Király utca 5.</Cim>
+    </KolcsonzoCeg>
+    <KolcsonzoCeg CegID="301">
+        <Nev>SpeedyCar Bt.</Nev>
+        <AutokSzama>30</AutokSzama>
+        <Alapterulet>300m2</Alapterulet>
+        <Cim>Győr, Szabadság utca 15.</Cim>
+    </KolcsonzoCeg>
+    <KolcsonzoCeg CegID="302">
+        <Nev>PremiumCar Zrt.</Nev>
+        <AutokSzama>70</AutokSzama>
+        <Alapterulet>800m2</Alapterulet>
+        <Cim>Debrecen, Kossuth utca 20.</Cim>
+    </KolcsonzoCeg>
+<Gepjarmu JarmuID="4"><Rendszam>JKL-456</Rendszam><JarmuTipus>SUV</JarmuTipus><Marka>Toyota</Marka><MegtettKilometer>20000</MegtettKilometer></Gepjarmu></AutoRendszer>
