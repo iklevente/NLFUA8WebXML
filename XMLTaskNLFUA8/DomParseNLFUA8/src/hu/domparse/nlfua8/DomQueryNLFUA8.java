@@ -11,44 +11,64 @@ import org.w3c.dom.NodeList;
 public class DomQueryNLFUA8 {
     public static void main(String[] args) {
         try {
+            // XML fájl beolvasása
             File inputFile = new File("XMLNLFUA8.xml");
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(inputFile);
-            document.getDocumentElement().normalize();
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
 
-            System.out.println("Jármű típusok:");
-            NodeList gepjarmuvek = document.getElementsByTagName("Gepjarmu");
-            for (int i = 0; i < gepjarmuvek.getLength(); i++) {
-                Element gepjarmu = (Element) gepjarmuvek.item(i);
-                System.out.println("  " + gepjarmu.getElementsByTagName("JarmuTipus").item(0).getTextContent());
+            // 1. Lekérdezés: Összes jármű márkája
+            System.out.println("1. Lekérdezés: Összes jármű márkája");
+            NodeList nodeList = doc.getElementsByTagName("Gepjarmu");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element element = (Element) nodeList.item(i);
+                System.out.println("- Márka: " + element.getElementsByTagName("Marka").item(0).getTextContent());
             }
+            System.out.println();
 
-            System.out.println("\nKölcsönző cégek nevei:");
-            NodeList kolcsonzok = document.getElementsByTagName("KolcsonzoCeg");
-            for (int i = 0; i < kolcsonzok.getLength(); i++) {
-                Element ceg = (Element) kolcsonzok.item(i);
-                System.out.println("  " + ceg.getElementsByTagName("Nev").item(0).getTextContent());
+            // 2. Lekérdezés: Melyik járművek típusai
+            System.out.println("2. Lekérdezés: Melyik járművek típusai");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element element = (Element) nodeList.item(i);
+                System.out.println("- Típus: " + element.getElementsByTagName("JarmuTipus").item(0).getTextContent());
             }
+            System.out.println();
 
-            String keresettID = "2";
-            System.out.println("\nAdott ID-jű jármű adatai (ID = " + keresettID + "):");
-            for (int i = 0; i < gepjarmuvek.getLength(); i++) {
-                Element gepjarmu = (Element) gepjarmuvek.item(i);
-                if (gepjarmu.getAttribute("JarmuID").equals(keresettID)) {
-                    System.out.println("  Rendszám: " + gepjarmu.getElementsByTagName("Rendszam").item(0).getTextContent());
-                    System.out.println("  Típus: " + gepjarmu.getElementsByTagName("JarmuTipus").item(0).getTextContent());
-                    System.out.println("  Gyártási hely: " + gepjarmu.getElementsByTagName("GyartasiHely").item(0).getTextContent());
+            // 3. Lekérdezés: Karbantartás szintjei járművenként
+            System.out.println("3. Lekérdezés: Karbantartás szintjei járművenként");
+            NodeList karbantartasList = doc.getElementsByTagName("Karbantartas");
+            for (int i = 0; i < karbantartasList.getLength(); i++) {
+                Element element = (Element) karbantartasList.item(i);
+                System.out.println("- Jármű ID: " + element.getAttribute("JarmuID"));
+                System.out.println("  Karbantartási szint: " + element.getElementsByTagName("KarbantartasiSzint").item(0).getTextContent());
+            }
+            System.out.println();
+
+            // 4. Lekérdezés: Melyik városokban készültek a járművek
+            System.out.println("4. Lekérdezés: Melyik városokban készültek a járművek");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element element = (Element) nodeList.item(i);
+                System.out.println("- Gyártási hely: " + element.getElementsByTagName("GyartasiHely").item(0).getTextContent());
+            }
+            System.out.println();
+
+            // 5. Lekérdezés: Legtöbbet megtett kilométerű jármű adatai
+            System.out.println("5. Lekérdezés: Legtöbbet megtett kilométerű jármű adatai");
+            int maxKilometer = 0;
+            Element maxKilometerCar = null;
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element element = (Element) nodeList.item(i);
+                int kilometer = Integer.parseInt(element.getElementsByTagName("MegtettKilometer").item(0).getTextContent());
+                if (kilometer > maxKilometer) {
+                    maxKilometer = kilometer;
+                    maxKilometerCar = element;
                 }
             }
-
-            System.out.println("\nKarbantartások listája:");
-            NodeList karbantartasok = document.getElementsByTagName("Karbantartas");
-            for (int i = 0; i < karbantartasok.getLength(); i++) {
-                Element karbantartas = (Element) karbantartasok.item(i);
-                System.out.println("  Jármű ID: " + karbantartas.getAttribute("JarmuID") +
-                        ", Szerelő ID: " + karbantartas.getAttribute("SzereloID") +
-                        ", Szint: " + karbantartas.getElementsByTagName("KarbantartasiSzint").item(0).getTextContent());
+            if (maxKilometerCar != null) {
+                System.out.println("- Rendszám: " + maxKilometerCar.getElementsByTagName("Rendszam").item(0).getTextContent());
+                System.out.println("- Típus: " + maxKilometerCar.getElementsByTagName("JarmuTipus").item(0).getTextContent());
+                System.out.println("- Kilométer: " + maxKilometer);
             }
 
         } catch (Exception e) {

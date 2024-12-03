@@ -1,6 +1,8 @@
 package hu.domparse.nlfua8;
 
 import java.io.File;
+import java.io.FileWriter;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -13,50 +15,40 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class DomReadNLFUA8 {
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         try {
+            // XML fájl beolvasása
             File inputFile = new File("XMLNLFUA8.xml");
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(inputFile);
-            document.getDocumentElement().normalize();
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
 
-            System.out.println("Root element: " + document.getDocumentElement().getNodeName());
-            NodeList nodeList = document.getChildNodes();
+            // Root elem kiírása
+            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
 
-            printTree(nodeList, "");
+            // Összes gépjármű kiíratása
+            NodeList nodeList = doc.getElementsByTagName("Gepjarmu");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Node node = nodeList.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element element = (Element) node;
+                    System.out.println("Jármű ID: " + element.getAttribute("JarmuID"));
+                    System.out.println("Rendszám: " + element.getElementsByTagName("Rendszam").item(0).getTextContent());
+                    System.out.println("Típus: " + element.getElementsByTagName("JarmuTipus").item(0).getTextContent());
+                    System.out.println("Márka: " + element.getElementsByTagName("Marka").item(0).getTextContent());
+                    System.out.println("Kilométer: " + element.getElementsByTagName("MegtettKilometer").item(0).getTextContent());
+                    System.out.println();
+                }
+            }
 
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new File("ReadOutput_XMLNLFUA8.xml"));
-            transformer.transform(source, result);
-
-            System.out.println("\nAz XML dokumentum tartalma mentve a 'ReadOutput_XMLNLFUA8.xml' fájlba.");
+            // Mentés fájlba
+            FileWriter writer = new FileWriter("OutputRead.txt");
+            writer.write("Az XML tartalmának kiírása blokk formában.\n");
+            writer.close();
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    private static void printTree(NodeList nodeList, String indent) {
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                System.out.println(indent + "Element: " + node.getNodeName());
-                if (node.hasAttributes()) {
-                    NamedNodeMap attributes = node.getAttributes();
-                    for (int j = 0; j < attributes.getLength(); j++) {
-                        Node attribute = attributes.item(j);
-                        System.out.println(indent + "  Attribute: " + attribute.getNodeName() + " = " + attribute.getNodeValue());
-                    }
-                }
-                if (node.hasChildNodes()) {
-                    printTree(node.getChildNodes(), indent + "  ");
-                }
-            } else if (node.getNodeType() == Node.TEXT_NODE && !node.getTextContent().trim().isEmpty()) {
-                System.out.println(indent + "  Value: " + node.getTextContent().trim());
-            }
         }
     }
 }
