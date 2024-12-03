@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="AutoRendszer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Gepjarmu" maxOccurs="unbounded"/>
+                <xs:element name="Karbantartas" maxOccurs="unbounded"/>
+                <xs:element name="Szerelo" maxOccurs="unbounded"/>
+                <xs:element name="Kolcsonzes" maxOccurs="unbounded"/>
+                <xs:element name="Vasarlo" maxOccurs="unbounded"/>
+                <xs:element name="KolcsonzoCeg" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Gepjarmu">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Rendszam" type="xs:string"/>
+                <xs:element name="JarmuTipus" type="xs:string"/>
+                <xs:element name="GyartasiHely" type="xs:string"/>
+                <xs:element name="Marka" type="xs:string"/>
+                <xs:element name="Evjarat" type="xs:int" minOccurs="0"/>
+                <xs:element name="MegtettKilometer" type="xs:int"/>
+            </xs:sequence>
+            <xs:attribute name="JarmuID" type="xs:int" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Karbantartas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="KarbantartasiSzint" type="xs:string"/>
+                <xs:element name="MegtettKilometer" type="xs:int"/>
+            </xs:sequence>
+            <xs:attribute name="JarmuID" type="xs:int" use="required"/>
+            <xs:attribute name="SzereloID" type="xs:int" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Szerelo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Nev" type="xs:string"/>
+                <xs:element name="SSN" type="xs:string"/>
+                <xs:element name="Lakcim" type="xs:string"/>
+                <xs:element name="Telefonszam" type="xs:string"/>
+                <xs:element name="Mentorok" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Mentor" type="xs:int" maxOccurs="unbounded"/>
+                            <xs:element name="Mentoralt" type="xs:int" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="SzereloID" type="xs:int" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Kölcsönzés -->
+    <xs:element name="Kolcsonzes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="KolcsonzesAra" type="xs:int"/>
+                <xs:element name="KolcsonzesIdopontja" type="xs:date"/>
+                <xs:element name="ElteltNapok" type="xs:int"/>
+            </xs:sequence>
+            <xs:attribute name="KolcsonzesID" type="xs:int" use="required"/>
+            <xs:attribute name="JarmuID" type="xs:int" use="required"/>
+            <xs:attribute name="VasarloID" type="xs:int" use="required"/>
+            <xs:attribute name="KolcsonzoCegID" type="xs:int" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Vasarlo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Nev" type="xs:string"/>
+                <xs:element name="Lakcim" type="xs:string"/>
+                <xs:element name="Telefonszam" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="VasarloID" type="xs:int" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="KolcsonzoCeg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Nev" type="xs:string"/>
+                <xs:element name="AutokSzama" type="xs:int"/>
+                <xs:element name="Alapterulet" type="xs:string"/>
+                <xs:element name="Cim" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="CegID" type="xs:int" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
