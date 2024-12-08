@@ -1,100 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:element name="AutoRendszer">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Gepjarmu" maxOccurs="unbounded"/>
-                <xs:element name="Karbantartas" maxOccurs="unbounded"/>
-                <xs:element name="Szerelo" maxOccurs="unbounded"/>
-                <xs:element name="Kolcsonzes" maxOccurs="unbounded"/>
-                <xs:element name="Vasarlo" maxOccurs="unbounded"/>
-                <xs:element name="KolcsonzoCeg" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+  <!-- Rendszám formátumának korlátozása -->
+  <xs:simpleType name="RendszamType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}[0-9]{3}" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:element name="Gepjarmu">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Rendszam" type="xs:string"/>
-                <xs:element name="JarmuTipus" type="xs:string"/>
-                <xs:element name="GyartasiHely" type="xs:string"/>
-                <xs:element name="Marka" type="xs:string"/>
-                <xs:element name="Evjarat" type="xs:int" minOccurs="0"/>
-                <xs:element name="MegtettKilometer" type="xs:int"/>
-            </xs:sequence>
-            <xs:attribute name="JarmuID" type="xs:int" use="required"/>
-        </xs:complexType>
-    </xs:element>
+  <!-- Napok korlátozása min-max értékkel -->
+  <xs:simpleType name="NapokType">
+    <xs:restriction base="xs:integer">
+      <xs:minExclusive value="0" />
+      <xs:maxExclusive value="365" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:element name="Karbantartas">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="KarbantartasiSzint" type="xs:string"/>
-                <xs:element name="MegtettKilometer" type="xs:int"/>
-            </xs:sequence>
-            <xs:attribute name="JarmuID" type="xs:int" use="required"/>
-            <xs:attribute name="SzereloID" type="xs:int" use="required"/>
-        </xs:complexType>
-    </xs:element>
+  <!-- Márka enumeráció -->
+  <xs:simpleType name="MarkaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BMW" />
+      <xs:enumeration value="Audi" />
+      <xs:enumeration value="Mercedes" />
+      <xs:enumeration value="Toyota" />
+      <xs:enumeration value="Ford" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:element name="Szerelo">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Nev" type="xs:string"/>
-                <xs:element name="SSN" type="xs:string"/>
-                <xs:element name="Lakcim" type="xs:string"/>
-                <xs:element name="Telefonszam" type="xs:string"/>
-                <xs:element name="Mentorok" minOccurs="0">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Mentor" type="xs:int" maxOccurs="unbounded"/>
-                            <xs:element name="Mentoralt" type="xs:int" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-            <xs:attribute name="SzereloID" type="xs:int" use="required"/>
-        </xs:complexType>
-    </xs:element>
+  <!-- Gépjármű -->
+  <xs:complexType name="GepjarmuType">
+    <xs:sequence>
+      <xs:element name="Rendszam" type="RendszamType" />
+      <xs:element name="Marka" type="MarkaType" />
+      <xs:element name="Evjarat" type="xs:gYear" />
+      <xs:element name="GyartasiHely" type="xs:string" />
+      <xs:element name="Tipus" type="xs:string" />
+      <xs:element name="MegtettKilometer" type="xs:integer" />
+    </xs:sequence>
+    <xs:attribute name="JarmuID" type="xs:ID" use="required" />
+  </xs:complexType>
 
-    <!-- Kölcsönzés -->
-    <xs:element name="Kolcsonzes">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="KolcsonzesAra" type="xs:int"/>
-                <xs:element name="KolcsonzesIdopontja" type="xs:date"/>
-                <xs:element name="ElteltNapok" type="xs:int"/>
-            </xs:sequence>
-            <xs:attribute name="KolcsonzesID" type="xs:int" use="required"/>
-            <xs:attribute name="JarmuID" type="xs:int" use="required"/>
-            <xs:attribute name="VasarloID" type="xs:int" use="required"/>
-            <xs:attribute name="KolcsonzoCegID" type="xs:int" use="required"/>
-        </xs:complexType>
-    </xs:element>
+  <!-- Egyedi nyilvántartás -->
+  <xs:complexType name="EgyediNyilvantartasType">
+    <xs:sequence>
+      <xs:element name="Rendszam" type="RendszamType" />
+      <xs:element name="KGFB" type="xs:string" />
+      <xs:element name="Tulajdonos" type="xs:string" />
+    </xs:sequence>
+    <!-- Azonosítja kapcsolat: a JarmuID alapján kötjük össze -->
+    <xs:attribute name="JarmuID" type="xs:IDREF" use="required"/>
+  </xs:complexType>
 
-    <xs:element name="Vasarlo">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Nev" type="xs:string"/>
-                <xs:element name="Lakcim" type="xs:string"/>
-                <xs:element name="Telefonszam" type="xs:string"/>
-            </xs:sequence>
-            <xs:attribute name="VasarloID" type="xs:int" use="required"/>
-        </xs:complexType>
-    </xs:element>
+  <!-- Vásárló -->
+  <xs:complexType name="VasarloType">
+    <xs:sequence>
+      <xs:element name="Nev" type="xs:string" />
+      <xs:element name="Lakcim" type="xs:string" />
+      <xs:element name="Telefonszam" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="VasarloID" type="xs:ID" use="required" />
+  </xs:complexType>
 
-    <xs:element name="KolcsonzoCeg">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Nev" type="xs:string"/>
-                <xs:element name="AutokSzama" type="xs:int"/>
-                <xs:element name="Alapterulet" type="xs:string"/>
-                <xs:element name="Cim" type="xs:string"/>
-            </xs:sequence>
-            <xs:attribute name="CegID" type="xs:int" use="required"/>
-        </xs:complexType>
-    </xs:element>
+  <!-- Kölcsönzés -->
+  <xs:complexType name="KolcsonzesType">
+    <xs:sequence>
+      <xs:element name="Tol" type="xs:date" />
+      <xs:element name="Ig" type="xs:date" />
+      <xs:element name="ElteltNapok" type="NapokType" />
+      <xs:element name="KolcsonzesiAr" type="xs:decimal" />
+    </xs:sequence>
+    <xs:attribute name="GepjarmuID" type="xs:IDREF" use="required" />
+    <xs:attribute name="VasarloID" type="xs:IDREF" use="required" />
+  </xs:complexType>
 
+  <!-- Szerelő -->
+  <xs:complexType name="SzereloType">
+    <xs:sequence>
+      <xs:element name="Nev" type="xs:string" />
+      <xs:element name="Lakcim" type="xs:string" />
+      <xs:element name="Telefonszam" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="SzereloID" type="xs:ID" use="required" />
+  </xs:complexType>
+
+  <!-- Kölcsönző cég -->
+  <xs:complexType name="KolcsonoCegType">
+    <xs:sequence>
+      <xs:element name="Cim" type="xs:string" />
+      <xs:element name="Alapterulet" type="xs:decimal" />
+      <xs:element name="AutokSzama" type="xs:integer" />
+    </xs:sequence>
+    <xs:attribute name="CegID" type="xs:ID" use="required" />
+  </xs:complexType>
+
+  <!-- Karbantartás -->
+  <xs:complexType name="KarbantartasType">
+    <xs:sequence>
+      <xs:element name="Datum" type="xs:date" />
+      <xs:element name="MegtettKilometer" type="xs:integer" />
+    </xs:sequence>
+    <xs:attribute name="GepjarmuID" type="xs:IDREF" use="required" />
+    <xs:attribute name="SzereloID" type="xs:IDREF" use="required" />
+  </xs:complexType>
+
+  <!-- Dolgozik -->
+  <xs:complexType name="DolgozikType">
+    <xs:sequence>
+      <xs:element name="KezdoDatum" type="xs:date" />
+    </xs:sequence>
+    <xs:attribute name="SzereloID" type="xs:IDREF" use="required" />
+    <xs:attribute name="CegID" type="xs:IDREF" use="required" />
+  </xs:complexType>
+
+  <!-- Kiadva -->
+  <xs:complexType name="KiadvaType">
+    <xs:sequence>
+      <xs:element name="Datum" type="xs:date" />
+    </xs:sequence>
+    <xs:attribute name="GepjarmuID" type="xs:IDREF" use="required" />
+    <xs:attribute name="CegID" type="xs:IDREF" use="required" />
+  </xs:complexType>
+
+  <!-- Gyökér elem -->
+  <xs:element name="AutokolcsonzesRendszer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Gepjarmu" type="GepjarmuType" maxOccurs="unbounded" />
+        <xs:element name="EgyediNyilvantartas" type="EgyediNyilvantartasType" maxOccurs="unbounded" />
+        <xs:element name="Vasarlo" type="VasarloType" maxOccurs="unbounded" />
+        <xs:element name="Kolcsonzes" type="KolcsonzesType" maxOccurs="unbounded" />
+        <xs:element name="Szerelo" type="SzereloType" maxOccurs="unbounded" />
+        <xs:element name="KolcsonoCeg" type="KolcsonoCegType" maxOccurs="unbounded" />
+        <xs:element name="Karbantartas" type="KarbantartasType" maxOccurs="unbounded" />
+        <xs:element name="Dolgozik" type="DolgozikType" maxOccurs="unbounded" />
+        <xs:element name="Kiadva" type="KiadvaType" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+
+    <!-- Kulcsok -->
+    <xs:key name="GepjarmuKey">
+      <xs:selector xpath="Gepjarmu" />
+      <xs:field xpath="@JarmuID" />
+    </xs:key>
+    <xs:key name="VasarloKey">
+      <xs:selector xpath="Vasarlo" />
+      <xs:field xpath="@VasarloID" />
+    </xs:key>
+    <xs:key name="SzereloKey">
+      <xs:selector xpath="Szerelo" />
+      <xs:field xpath="@SzereloID" />
+    </xs:key>
+    <xs:key name="CegKey">
+      <xs:selector xpath="KolcsonoCeg" />
+      <xs:field xpath="@CegID" />
+    </xs:key>
+
+    <!-- Kulcs referenciák -->
+    <xs:keyref name="EgyediNyilvantartasGepjarmuRef" refer="GepjarmuKey">
+      <xs:selector xpath="EgyediNyilvantartas"/>
+      <xs:field xpath="@JarmuID"/>
+    </xs:keyref>
+
+    <xs:keyref name="KolcsonzesGepjarmuRef" refer="GepjarmuKey">
+      <xs:selector xpath="Kolcsonzes" />
+      <xs:field xpath="@GepjarmuID" />
+    </xs:keyref>
+    <xs:keyref name="KolcsonzesVasarloRef" refer="VasarloKey">
+      <xs:selector xpath="Kolcsonzes" />
+      <xs:field xpath="@VasarloID" />
+    </xs:keyref>
+    <xs:keyref name="KarbantartasGepjarmuRef" refer="GepjarmuKey">
+      <xs:selector xpath="Karbantartas" />
+      <xs:field xpath="@GepjarmuID" />
+    </xs:keyref>
+    <xs:keyref name="KarbantartasSzereloRef" refer="SzereloKey">
+      <xs:selector xpath="Karbantartas" />
+      <xs:field xpath="@SzereloID" />
+    </xs:keyref>
+    <xs:keyref name="DolgozikSzereloRef" refer="SzereloKey">
+      <xs:selector xpath="Dolgozik" />
+      <xs:field xpath="@SzereloID" />
+    </xs:keyref>
+    <xs:keyref name="DolgozikCegRef" refer="CegKey">
+      <xs:selector xpath="Dolgozik" />
+      <xs:field xpath="@CegID" />
+    </xs:keyref>
+    <xs:keyref name="KiadvaGepjarmuRef" refer="GepjarmuKey">
+      <xs:selector xpath="Kiadva" />
+      <xs:field xpath="@GepjarmuID" />
+    </xs:keyref>
+    <xs:keyref name="KiadvaCegRef" refer="CegKey">
+      <xs:selector xpath="Kiadva" />
+      <xs:field xpath="@CegID" />
+    </xs:keyref>
+  </xs:element>
 </xs:schema>
