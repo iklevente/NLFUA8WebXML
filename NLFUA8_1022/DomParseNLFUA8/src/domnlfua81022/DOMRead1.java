@@ -12,7 +12,7 @@ import java.io.File;
 public class DOMRead1 {
 
     public static void main(String[] args) throws Exception{
-        File xmlFile = new File("src/resources/Y4O4X0_orarend.xml");
+        File xmlFile = new File("src/resources/NLFUA8_orarend.xml");
 
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document doc = builder.parse(xmlFile);
