@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><AutokolcsonzesRendszer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="autokolcsonzes.xsd">
+
+  <!-- 3 Gépjármű példány -->
+  <Gepjarmu JarmuID="CAR1">
+    <Rendszam>ABC100</Rendszam>
+    <Marka>BMW</Marka>
+    <Evjarat>2020</Evjarat>
+    <GyartasiHely>Germany</GyartasiHely>
+    <Tipus>Sedan</Tipus>
+    <MegtettKilometer>10000</MegtettKilometer>
+  </Gepjarmu>
+
+  <Gepjarmu JarmuID="CAR2">
+    <Rendszam>ABC200</Rendszam>
+    <Marka>Audi</Marka>
+    <Evjarat>2021</Evjarat>
+    <GyartasiHely>Hungary</GyartasiHely>
+    <Tipus>SUV</Tipus>
+    <MegtettKilometer>20000</MegtettKilometer>
+  </Gepjarmu>
+
+  <Gepjarmu JarmuID="CAR3">
+    <Rendszam>ABC300</Rendszam>
+    <Marka>Toyota</Marka>
+    <Evjarat>2019</Evjarat>
+    <GyartasiHely>Japan</GyartasiHely>
+    <Tipus>Hatchback</Tipus>
+    <MegtettKilometer>50000</MegtettKilometer>
+  </Gepjarmu>
+
+  <!-- 3 Egyedi nyilvántartás példány -->
+  <EgyediNyilvantartas JarmuID="CAR1">
+    <Rendszam>ABC100</Rendszam>
+    <KGFB>KGFB12345</KGFB>
+    <Tulajdonos>Kis János</Tulajdonos>
+  </EgyediNyilvantartas>
+
+  <EgyediNyilvantartas JarmuID="CAR2">
+    <Rendszam>ABC200</Rendszam>
+    <KGFB>KGFB54321</KGFB>
+    <Tulajdonos>Balogh Éva</Tulajdonos>
+  </EgyediNyilvantartas>
+
+  <EgyediNyilvantartas JarmuID="CAR3">
+    <Rendszam>ABC300</Rendszam>
+    <KGFB>KGFB67890</KGFB>
+    <Tulajdonos>Farkas Péter</Tulajdonos>
+  </EgyediNyilvantartas>
+
+  <!-- 3 Vásárló példány -->
+  <Vasarlo VasarloID="V1">
+    <Nev>Kovács István</Nev>
+    <Lakcim>Budapest</Lakcim>
+    <Telefonszam>1234567</Telefonszam>
+  </Vasarlo>
+
+  <Vasarlo VasarloID="V2">
+    <Nev>Nagy Péter</Nev>
+    <Lakcim>Debrecen</Lakcim>
+    <Telefonszam>2234567</Telefonszam>
+  </Vasarlo>
+
+  <Vasarlo VasarloID="V3">
+    <Nev>Tóth Anna</Nev>
+    <Lakcim>Szeged</Lakcim>
+    <Telefonszam>3234567</Telefonszam>
+  </Vasarlo>
+
+  <!-- 3 Kölcsönzés példány -->
+  <Kolcsonzes GepjarmuID="CAR1" VasarloID="V1">
+    <Tol>2021-06-01</Tol>
+    <Ig>2021-06-10</Ig>
+    <ElteltNapok>9</ElteltNapok>
+    <KolcsonzesiAr>200.50</KolcsonzesiAr>
+  </Kolcsonzes>
+
+  <Kolcsonzes GepjarmuID="CAR2" VasarloID="V2">
+    <Tol>2021-07-05</Tol>
+    <Ig>2021-07-09</Ig>
+    <ElteltNapok>4</ElteltNapok>
+    <KolcsonzesiAr>150.00</KolcsonzesiAr>
+  </Kolcsonzes>
+
+  <Kolcsonzes GepjarmuID="CAR3" VasarloID="V3">
+    <Tol>2021-08-15</Tol>
+    <Ig>2021-08-20</Ig>
+    <ElteltNapok>5</ElteltNapok>
+    <KolcsonzesiAr>180.75</KolcsonzesiAr>
+  </Kolcsonzes>
+
+  <!-- 3 Szerelő példány -->
+  <Szerelo SzereloID="SZ1">
+    <Nev>Horváth Béla</Nev>
+    <Lakcim>Debrecen</Lakcim>
+    <Telefonszam>2345678</Telefonszam>
+  </Szerelo>
+
+  <Szerelo SzereloID="SZ2">
+    <Nev>Szabó Katalin</Nev>
+    <Lakcim>Szeged</Lakcim>
+    <Telefonszam>3456789</Telefonszam>
+  </Szerelo>
+
+  <Szerelo SzereloID="SZ3">
+    <Nev>Mészáros László</Nev>
+    <Lakcim>Pécs</Lakcim>
+    <Telefonszam>4567890</Telefonszam>
+  </Szerelo>
+
+  <!-- 3 Kölcsönző cég példány -->
+  <KolcsonoCeg CegID="CEG1">
+    <Cim>Budapest, XY utca 10</Cim>
+    <Alapterulet>250.5</Alapterulet>
+    <AutokSzama>10</AutokSzama>
+  </KolcsonoCeg>
+
+  <KolcsonoCeg CegID="CEG2">
+    <Cim>Győr, AB tér 5</Cim>
+    <Alapterulet>300.0</Alapterulet>
+    <AutokSzama>20</AutokSzama>
+  </KolcsonoCeg>
+
+  <KolcsonoCeg CegID="CEG3">
+    <Cim>Miskolc, CD u. 7</Cim>
+    <Alapterulet>150.75</Alapterulet>
+    <AutokSzama>15</AutokSzama>
+  </KolcsonoCeg>
+
+  <!-- 3 Karbantartás példány -->
+  <Karbantartas GepjarmuID="CAR1" SzereloID="SZ1">
+    <Datum>2022-01-15</Datum>
+    <MegtettKilometer>15000</MegtettKilometer>
+  </Karbantartas>
+
+  <Karbantartas GepjarmuID="CAR2" SzereloID="SZ2">
+    <Datum>2022-03-20</Datum>
+    <MegtettKilometer>25000</MegtettKilometer>
+  </Karbantartas>
+
+  <Karbantartas GepjarmuID="CAR3" SzereloID="SZ3">
+    <Datum>2023-07-10</Datum>
+    <MegtettKilometer>60000</MegtettKilometer>
+  </Karbantartas>
+
+  <!-- 3 Dolgozik példány -->
+  <Dolgozik CegID="CEG1" SzereloID="SZ1">
+    <KezdoDatum>2020-01-01</KezdoDatum>
+  </Dolgozik>
+
+  <Dolgozik CegID="CEG2" SzereloID="SZ2">
+    <KezdoDatum>2021-02-01</KezdoDatum>
+  </Dolgozik>
+
+  <Dolgozik CegID="CEG3" SzereloID="SZ3">
+    <KezdoDatum>2021-05-10</KezdoDatum>
+  </Dolgozik>
+
+  <!-- 3 Kiadva példány -->
+  <Kiadva CegID="CEG1" GepjarmuID="CAR1">
+    <Datum>2021-03-15</Datum>
+  </Kiadva>
+
+  <Kiadva CegID="CEG2" GepjarmuID="CAR2">
+    <Datum>2021-08-20</Datum>
+  </Kiadva>
+
+  <Kiadva CegID="CEG3" GepjarmuID="CAR3">
+    <Datum>2022-11-05</Datum>
+  </Kiadva>
+
+</AutokolcsonzesRendszer>
