@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurzusfelvetel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="NLFUA8_kurzusfelvetel.xsd" tanev="2024_2025 I." egyetem="ME">
+    <hallgato id="NLFUA8.ME">
+        <hnev>Ilyó-Kovács Levente</hnev>
+        <szulev>2003-01-13</szulev>
+        <szak evf="5">Mérnökinformatikus</szak>
+    </hallgato>
+    <kurzusok>
+        <kurzus id="GEIAL344-B2">
+            <kurzusnev>Elektronika és elektrotechnika</kurzusnev>
+            <kredit>5</kredit>
+            <hely>III.</hely>
+            <idopont>Hétfő 08:00-09:30</idopont>
+            <oktato>Szabó Norbert</oktato>
+        </kurzus>
+       <kurzus id="GEIAL234-B2" nyelv="magyar">
+            <kurzusnev>Windows rendszergazda</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In103</hely>
+            <idopont>Kedd 08:00-09:30</idopont>
+            <oktato>Wagner György</oktato>
+        </kurzus>
+        <kurzus id="GEIAL124-B2" jovahagyas="igen">
+            <kurzusnev>Webes adatkezelő környezetek</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In102</hely>
+            <idopont>Szerda 14:00-15:30</idopont>
+            <oktato>Dr. Kovács László</oktato>
+        </kurzus>
+    </kurzusok>
+</kurzusfelvetel>
